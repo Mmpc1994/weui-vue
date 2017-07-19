@@ -1,0 +1,17 @@
+@mixin noSpace{
+	padding:0;
+  margin:0;
+}
+
+@mixin textOverflowCut{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+
+@mixin animationRotate{
+	-webkit-transform:translate3d(0,0,0) rotate(0);
+	transform:translate3d(0,0,0) rotate(0);
+	-webkit-animation:rotate 1s linear 0s infinite;
+	animation:rotate 1s linear 0s infinite;
+}

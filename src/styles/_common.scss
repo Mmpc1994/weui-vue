@@ -1,0 +1,55 @@
+._borderBaseRow {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  color: $borderColor;
+  transform-origin: 0 100%;
+  border-bottom: 1px solid $borderColor;
+  transform: scaleY(0.5)
+}
+._borderBaseColumn {
+  content: ' ';
+  position: absolute;
+  width: 1px;
+  transform: scaleX(0.5);
+  transform-origin: 100% 0;
+  top: 0;
+  bottom: 0;
+}
+
+.borderBottom {
+  bottom: 0;
+  @extend ._borderBaseRow;
+}
+
+.borderTop {
+  top: 0;
+  @extend ._borderBaseRow;
+}
+
+.borderRight {
+  @extend ._borderBaseColumn;
+  border-right: 1px solid $borderColor;
+  right: 0;
+}
+
+.borderLeft {
+  @extend ._borderBaseColumn;
+  border-left: 1px solid $borderColor;
+  left: 0;
+}
+
+.fullScreen{
+  height: 100%;
+  width: 100%;
+}
+
+.container{
+  text-align: center;
+  .opt{
+    width: 90%;
+    margin-top: 50px;
+  }
+}

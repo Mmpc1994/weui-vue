@@ -1,0 +1,11 @@
+* {margin: 0;padding: 0;}
+body,div,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,figcaption,figure,fieldset,legend,button,input,textarea,th,td{box-sizing: border-box;}
+html {color: $textColor;box-sizing: border-box;font-size: 10px;height: 100%;}
+body {color: $textColor;box-sizing: border-box;height: 100%; overflow:auto;position: relative;}
+body,button,input,select,textarea{font:12px/1 Lucida Grande,'Microsoft YaHei',"Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif}
+ul {list-style: none;}
+li {outline: none;}
+a {text-decoration: none;}
+fieldset {
+  border: none;
+}

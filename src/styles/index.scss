@@ -1,0 +1,18 @@
+
+/**
+ * 引入文件说明
+ *
+ * SETTING
+ * variables....................变量存储文件
+ * mixins.......................混合宏存储文件
+ * common.......................常用的小段css文件
+ * font.......................字体文件
+ * layout.......................布局文件
+ *
+*/
+
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'common.scss';
+@import 'font.scss';
+@import 'reset.scss';
