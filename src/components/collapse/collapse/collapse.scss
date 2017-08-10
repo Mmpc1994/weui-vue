@@ -1,0 +1,7 @@
+.collapse {
+  border-top: 1px solid $borderColor;
+
+  &:last-child {
+    border-bottom: 1px solid $borderColor;
+  }
+}

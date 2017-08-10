@@ -1,0 +1,19 @@
+<div class="collapse">
+  <!-- 头部
+  -------------------------- --> 
+  <div class="collapse-header"
+    @click="handleHeaderClick">
+    <!-- @slot header -->
+    <slot name="header"></slot>
+  </div>
+
+  <!-- 隐藏部分
+  -------------------------- --> 
+  <collapse-transition>
+     <div class="collapse-wrap"
+       v-show="isActive">
+      <!-- @slot default -->
+      <slot></slot>
+    </div> 
+  </collapse-transition>
+</div>
