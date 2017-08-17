@@ -41,19 +41,20 @@
   left: 0;
 }
 
-.fullScreen{
+body, html {
   height: 100%;
-  width: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.container{
-  text-align: center;
-  .opt{
-    width: 90%;
-    margin-top: 50px;
-  }
+.cls-tab {
+  height: 100%;
+  position: relative;
 }
-body, html {
-    height: 100%;
-    -webkit-tap-highlight-color: transparent;
+
+.cls-tab__panel {
+  box-sizing: border-box;
+  height: 100%;
+  padding-bottom: 50px;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
