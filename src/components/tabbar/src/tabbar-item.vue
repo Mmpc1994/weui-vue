@@ -23,11 +23,13 @@
 </script>
 
 <style lang="scss">
+  @import 'src/styles/variables.scss';
+
   .cls-tabbar__item {
     display: block;
     text-align: center;
     -webkit-box-flex: 1;
-    padding: 5px, 0, 0;
+    padding: 5px 0 0 0;
     text-align: center;
   }
 
@@ -41,5 +43,6 @@
     font-size: 1rem;
     text-align: center;
     line-height: 1.8;
+    color: $textColor;
   }
 </style>

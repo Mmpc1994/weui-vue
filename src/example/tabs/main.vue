@@ -1,7 +1,5 @@
 <template>
   <clsTab>
-
-
     <tabbar-item slot label="微信" @click.native="go">
       <img :src="tabberIcon" slot="thumb">
     </tabbar-item>

@@ -1,7 +1,9 @@
 <template>
   <div class="cls-tab">
     <div class="cls-tab__panel">
-      <router-view></router-view>
+      <slot name="main">
+        <router-view></router-view>
+      </slot>
     </div>
     <div class="cls-tabbar" layout="row">
       <slot></slot>
@@ -19,6 +21,8 @@
 </script>
 
 <style lang="scss">
+  @import 'src/styles/variables.scss';
+  
   .cls-tab {
     height: 100%;
     position: relative;
@@ -36,6 +40,6 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* height: 50px; */
+    background-color: $darkWhite;
   }
 </style>
