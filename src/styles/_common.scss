@@ -53,3 +53,7 @@
     margin-top: 50px;
   }
 }
+body, html {
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+}

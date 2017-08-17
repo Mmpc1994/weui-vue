@@ -11,6 +11,9 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "flexbox_layout": "^1.0.2",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
     "vue": "^2.3.3",
     "vue-router": "^2.6.0"
   },

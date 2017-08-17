@@ -9,3 +9,10 @@ a {text-decoration: none;}
 fieldset {
   border: none;
 }
+body, html {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  line-height: 1.6;
+}

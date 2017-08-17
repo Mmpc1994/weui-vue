@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import './styles/index.scss'
+import 'flexbox_layout'
 
 Vue.config.productionTip = false
 
