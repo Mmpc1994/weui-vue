@@ -20,6 +20,10 @@ export default new Router({
           name: 'hello',
           component: hello
         }]
+      }, {
+        path: 'navbar',
+        name: 'navbar',
+        component: resolve => require(['../example/navbar/main.vue'], resolve)
       }]
     }
   ]
