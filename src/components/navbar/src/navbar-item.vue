@@ -1,6 +1,9 @@
 <template>
   <a class="cls-navbar__item" flex @click="tabClick" :class="{'cls-navbar__active': $parent.value === name}">
-    <div class="cls-navbar__label">{{label}}</div>
+    <slot>
+      <!-- 可以自定义tab标签的样式 -->
+      <div class="cls-navbar__label">{{label}}</div>
+    </slot>
   </a>
 </template>
 
@@ -32,7 +35,7 @@
   .cls-navbar__item{
     display: block;
     text-align: center;
-    padding: 5px 0 0 0;
+    padding: 10px 0 ;
   }
 
   .cls-navbar__label {
@@ -44,5 +47,10 @@
 
   .cls-navbar__active {
      border-bottom: 2px solid $lightBlue; 
+     margin-bottom: -3px;
+  }
+
+  .cls-navbar__active > .cls-navbar__label{
+    color: $success;
   }
 </style>
