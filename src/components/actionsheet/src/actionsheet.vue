@@ -23,8 +23,6 @@
   import Popup from 'vue-popup'
   import 'vue-popup/lib/popup.css'
 
-  console.log(Popup)
-
   export default {
     name: 'actionsheet',
 
@@ -85,8 +83,8 @@
     backface-visibility: hidden;
     z-index: 1000;
     width: 100%;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
+    left: 50%; 
+    transform: translate3d(-50%, 0, 0); 
   }
 
   .cls-actionsheet__title {
@@ -116,7 +114,7 @@
   }
 
   .actionsheet-enter,
-  .actionsheet-leave-active {
+  .actionsheet-leave-to {
     transform: translate3d(-50%, 100%, 0);
   }
 </style>
