@@ -47,7 +47,7 @@
 
   .cls-navbar__active {
      border-bottom: 2px solid $lightBlue; 
-     margin-bottom: -3px;
+     margin-bottom: -2px;
   }
 
   .cls-navbar__active > .cls-navbar__label{

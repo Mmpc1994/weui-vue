@@ -24,6 +24,14 @@ export default new Router({
         path: 'navbar',
         name: 'navbar',
         component: resolve => require(['../example/navbar/main.vue'], resolve)
+      }, {
+        path: 'popup',
+        name: 'popup',
+        component: resolve => require(['../example/popup/main.vue'], resolve)
+      }, {
+        path: 'actionsheet',
+        name: 'actionsheet',
+        component: resolve => require(['../example/actionsheet/main.vue'], resolve)
       }]
     }
   ]

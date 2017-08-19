@@ -27,7 +27,7 @@
 
     data () {
       return {
-        activeTab: 'tab1'
+        activeTab: 'tab2'
       }
     }
   }
