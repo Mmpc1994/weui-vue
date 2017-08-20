@@ -1,19 +1,20 @@
 <template>
   <div style="height: 100%">
-    <button @click="show">open</button>
+    <clsButton @click.native="show">open</clsButton>
     <actionsheet v-model="visible">
-      
+
     </actionsheet>
   </div>
 </template>
 
 <script>
   import actionsheet from '@/components/actionsheet'
+  import clsButton from '@/components/button'
 
   export default {
     name: 'example-actionsheet',
 
-    components: { actionsheet },
+    components: { actionsheet, clsButton },
 
     data () {
       return {

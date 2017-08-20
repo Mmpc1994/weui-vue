@@ -32,6 +32,10 @@ export default new Router({
         path: 'actionsheet',
         name: 'actionsheet',
         component: resolve => require(['../example/actionsheet/main.vue'], resolve)
+      }, {
+        path: 'button',
+        name: 'button',
+        component: resolve => require(['../example/button/main.vue'], resolve)
       }]
     }
   ]
