@@ -40,6 +40,10 @@ export default new Router({
         path: 'search',
         name: 'search',
         component: resolve => require(['../example/search/main.vue'], resolve)
+      }, {
+        path: 'checkbox',
+        name: 'checkbox',
+        component: resolve => require(['../example/checkbox/main.vue'], resolve)
       }]
     }
   ]
