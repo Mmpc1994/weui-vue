@@ -1,3 +1,3 @@
-import search from './search.vue';
+import search from './search.vue'
 
-export default search;
+export default search

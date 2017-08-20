@@ -36,6 +36,10 @@ export default new Router({
         path: 'button',
         name: 'button',
         component: resolve => require(['../example/button/main.vue'], resolve)
+      }, {
+        path: 'search',
+        name: 'search',
+        component: resolve => require(['../example/search/main.vue'], resolve)
       }]
     }
   ]
