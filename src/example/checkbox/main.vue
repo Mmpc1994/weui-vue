@@ -1,25 +1,30 @@
 <template>
   <!-- <input type="checkbox"> -->
   <div>
-    <clsCheckbox v-model="choseList" name="goods" label="选项1"></clsCheckbox>
-    <clsCheckbox v-model="choseList" name="goods" label="选项2"></clsCheckbox>
-    <clsCheckbox v-model="choseList" name="goods" label="选项3"></clsCheckbox>
-    <clsCheckbox v-model="choseList" name="goods" label="选项4"></clsCheckbox>
+    <clsCheckboxGroup v-model="choseList">
+      <clsCheckbox v-model="one" name="goods" label="选项1"></clsCheckbox>
+      <clsCheckbox v-model="two" name="goods" label="选项1"></clsCheckbox>
+      <clsCheckbox v-model="three" name="goods" label="选项1"></clsCheckbox>
+    </clsCheckboxGroup>
   </div>
 
 </template>
 
 <script>
   import clsCheckbox from '@/components/checkbox'
+  import clsCheckboxGroup from '@/components/checkboxGroup'
   
   export default {
     name: 'example-checklist',
 
-    components: { clsCheckbox },
+    components: { clsCheckbox, clsCheckboxGroup },
 
     data () {
       return {
-        choseList: ['选项1', '选项2']
+        choseList: [],
+        one: 'xiaoming',
+        two: 'dengguang',
+        three: 'junjun'
       }
     }
   }

@@ -1,3 +1,3 @@
-import clsCheckbox from './checkbox.vue'
+import clsCheckbox from './src/checkbox.vue'
 
 export default clsCheckbox
