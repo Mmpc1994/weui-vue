@@ -1,12 +1,12 @@
 <template>
   <label>
-    <input 
+     <input
       type="checkbox"
       class="cls-checkbox__value" 
       :class="{'is-checked': isChecked}"
       @change="handleChange"
-      :value="label"
-      v-model="modal">
+      :value="trueValue || label"
+      v-model="modal"> 
     <span class="cls-checkbox__core"></span>
     <span class="cls-checkbox__label">{{label}}</span> 
   </label>
@@ -28,7 +28,9 @@
         require: true
       },
       value: {},
-      checked: Boolean
+      checked: Boolean,
+      trueValue: {},
+      falseValue: {}
     },
 
     computed: {
@@ -37,6 +39,7 @@
           return this.isGroup ? this._checkboxGroup.value : this.value
         },
         set (val) {
+          console.log([val])
           if (this.isGroup) {
             this.dispatch('clsCheckboxGroup', 'input', [val])
           } else {
@@ -62,7 +65,9 @@
         if (_obj.toString.call(this.modal) === '[object Boolean]') {
           return this.modal
         } else if (Array.isArray(this.modal)) {
-          return this.modal.indexOf(this.label) > -1
+          return this.modal.indexOf(this.trueValue || this.label) > -1
+        } else if (this.modal) {
+          return this.modal === this.trueValue
         }
         return false
       },
@@ -83,6 +88,7 @@
       },
 
       handleChange (ev) {
+        // 这里只是为了触发change事件, 暴露出change事件
         this.$emit('change', ev)
         if (this.isGroup) {
           this.dispatch('clsCheckboxGroup', 'change', [this._checkboxGroup.value])
