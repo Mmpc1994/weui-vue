@@ -22,7 +22,6 @@
     mixins: [emitter],
 
     props: {
-      // name: String,
       label: {
         type: String,
         require: true
