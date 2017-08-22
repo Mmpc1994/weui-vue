@@ -1,11 +1,12 @@
 <template>
-  <!-- <input type="checkbox"> -->
   <div>
     <clsCheckboxGroup v-model="choseList">
-      <clsCheckbox v-model="one" name="goods" label="选项1"></clsCheckbox>
-      <clsCheckbox v-model="two" name="goods" label="选项1"></clsCheckbox>
-      <clsCheckbox v-model="three" name="goods" label="选项1"></clsCheckbox>
+      <clsCheckbox label="选项1"></clsCheckbox>
+      <clsCheckbox label="选项2"></clsCheckbox>
+      <clsCheckbox label="选项3"></clsCheckbox>
     </clsCheckboxGroup>
+
+    <clsCheckbox v-model="three" label="选项3"></clsCheckbox>
   </div>
 
 </template>
@@ -22,9 +23,12 @@
     data () {
       return {
         choseList: [],
-        one: 'xiaoming',
-        two: 'dengguang',
-        three: 'junjun'
+        test: {
+          name: 1
+        },
+        example: {
+          name: 2
+        }
       }
     }
   }

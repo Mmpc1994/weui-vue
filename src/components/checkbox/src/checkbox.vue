@@ -5,6 +5,7 @@
       class="cls-checkbox__value" 
       :class="{'is-checked': isChecked}"
       @change="handleChange"
+      :value="label"
       v-model="modal">
     <span class="cls-checkbox__core"></span>
     <span class="cls-checkbox__label">{{label}}</span> 
@@ -45,7 +46,6 @@
       },
 
       isGroup () {
-        console.log(1)
         let _parent = this.$parent
         while (_parent) {
           if (_parent.$options.componentName !== 'clsCheckboxGroup') {
@@ -58,7 +58,6 @@
         return false
       },
       isChecked () {
-        console.log(3)
         let _obj = {}
         if (_obj.toString.call(this.modal) === '[object Boolean]') {
           return this.modal
