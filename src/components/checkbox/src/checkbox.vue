@@ -1,11 +1,21 @@
 <template>
   <label>
-     <input
+    <input
+      v-if="trueValue || falseValue"
       type="checkbox"
       class="cls-checkbox__value" 
       :class="{'is-checked': isChecked}"
       @change="handleChange"
-      :value="trueValue || label"
+      :true-value="trueValue"
+      :false-value="falseValue"
+      v-model="modal"> 
+     <input
+      v-else
+      type="checkbox"
+      class="cls-checkbox__value" 
+      :class="{'is-checked': isChecked}"
+      @change="handleChange"
+      :value="label"
       v-model="modal"> 
     <span class="cls-checkbox__core"></span>
     <span class="cls-checkbox__label">{{label}}</span> 

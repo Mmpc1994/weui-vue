@@ -6,7 +6,7 @@
       <clsCheckbox label="选项3"></clsCheckbox>
     </clsCheckboxGroup>
 
-    <clsCheckbox v-model="test" label="选项3"></clsCheckbox>
+    <clsCheckbox v-model="currentValue" label="选项3" :trueValue="test" :falseValue="example"></clsCheckbox>
 
   </div>
 
@@ -31,7 +31,8 @@
           name: 2
         },
         a: 1,
-        b: 2
+        b: 2,
+        currentValue: {}
       }
     }
   }
