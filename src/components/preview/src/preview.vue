@@ -1,15 +1,15 @@
 <template>
-  <section class="preview">
-    <div class="preview_hd">
-      <div class="preview_item">
-        <label for="" class="preview_label">{{label}}</label>
-        <em class="preview_value">{{value}}</em>
+  <section class="cls-preview">
+    <div class="cls-preview__hd">
+      <div class="cls-preview__item">
+        <label for="" class="cls-preview__label">{{label}}</label>
+        <em class="cls-preview__value">{{value}}</em>
       </div>
     </div>
-    <div class="preview_bd">
+    <div class="cls-preview__bd">
       <slot></slot>
     </div>
-    <div class="preview_ft">
+    <div class="cls-preview__ft">
       <slot name="ft">
       </slot>
     </div>
@@ -26,14 +26,14 @@
 </script>
 <style lang="scss">
   @import "src/styles/index.scss"; 
-  .preview{
+  .cls-preview{
     position: relative;
     background: $colorWhite;
     &::before{
       @extend .borderTop;
     }
   }
-  .preview_hd{
+  .cls-preview__hd{
     position: relative;
     padding: 10px 15px;
     line-height: 2.5em;
@@ -43,28 +43,28 @@
       left: 8px;
     }
   }
-  .preview_bd{
+
+  .cls-preview__bd{
     padding: 10px 15px;
     text-align: right;
     color: $textColor;
     line-height: 2;
   }
-  .preview_ft{
+
+  .cls-preview__ft{
     text-align: center;
     position: relative;
     padding-bottom: 40px;
     &::before{
       @extend .borderTop;
     }
-    /* .el-button{
-      width: 80%;
-      margin-top: 100px;
-    } */
   }
-  .preview_item{
+
+  .cls-preview__item{
     overflow: hidden;
   }
-  .preview_label{
+  
+  .cls-preview__label{
     float: left;
     margin-left: 1em;
     min-width: 4em;
@@ -72,7 +72,7 @@
     text-align: justify;
     text-align-last: justify;
   }
-  .preview_value{
+  .cls-preview__value{
     display: block;
     overflow: hidden;
     word-break: normal;
