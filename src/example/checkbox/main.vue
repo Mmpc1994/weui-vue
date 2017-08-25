@@ -1,12 +1,12 @@
 <template>
   <div>
     <clsCheckboxGroup v-model="choseList">
-      <clsCheckbox label="选项1" :trueValue="test"></clsCheckbox>
-      <clsCheckbox label="选项2" :trueValue="example"></clsCheckbox>
+      <clsCheckbox label="选项1"></clsCheckbox>
+      <clsCheckbox label="选项2"></clsCheckbox>
       <clsCheckbox label="选项3"></clsCheckbox>
     </clsCheckboxGroup>
 
-    <clsCheckbox v-model="currentValue" label="选项3" :trueValue="test" :falseValue="example"></clsCheckbox>
+    <clsCheckbox v-model="currentValue" label="选项3"></clsCheckbox>
 
   </div>
 
