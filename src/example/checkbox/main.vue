@@ -28,7 +28,7 @@
           name: 1
         },
         example: {
-          name: 2
+          name: 24
         },
         a: 1,
         b: 3,
