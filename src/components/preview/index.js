@@ -1,7 +1,4 @@
-import preview from './preview';
-import previewItem from './preview-item';
+import preview from './src/preview'
+// import previewItem from './preview-item';
 
-export {
-  preview,
-  previewItem
-};
+export default preview
