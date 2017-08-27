@@ -1,12 +1,12 @@
 <template>
-  <a class="cell" layout="row" layout-align="center center" @click="go">
-    <div class="cell_hd">
+  <a class="cls-cell" layout="row" layout-align="center center" @click="go">
+    <div class="cls-cell__hd">
       <slot name="thumb"></slot>
     </div>
-    <div class="cell_bd" flex>
+    <div class="cls-cell__bd" flex>
       <p>{{label}}</p>
     </div>
-    <div class="cell_ft" :class="{'link' : link}">
+    <div class="cls-cell__ft" :class="{'cls-cell__link' : link}">
       <slot name="value">{{value}}</slot>
     </div>
   </a>
@@ -20,43 +20,44 @@
       label: String,
       to: [Object, String],
       link: {
-        default() {
-          return true;
+        default () {
+          return true
         }
       }
     },
     methods: {
-      go() {
+      go () {
         if (!this.to) {
-          return;
+          return
         }
-        this.$router.push(this.to);
+        this.$router.push(this.to)
       }
     }
-  };
+  }
 </script>
 
 <style lang="scss">
   @import "src/styles/index.scss"; 
-  .cell {
+  .cls-cell {
     padding:  10px 15px;
     position: relative;
     &::after {
       @extend .borderBottom;
     }
   }
-  .cell_bd {
-    color: $colorDark;
+  .cls-cell__bd {
+    color: $dark;
+    text-align: left;
   }
 
-  .cell_ft {
+  .cls-cell__ft {
     text-align: right;
     color: $textColor;
     padding-right: 13px;
     position: relative;
   }
 
-  .link{
+  .cls-cell__link{
     &::after {
       content: " ";
       display: inline-block;

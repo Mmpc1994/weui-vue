@@ -1,22 +1,22 @@
 <template>
-  <div class="cells">
+  <div class="cls-cells">
     <slot></slot>
   </div>
 </template>
 <script>
   export default {
     name: 'cells'
-  };
+  }
 </script>
 <style lang="scss">
   @import "src/styles/index.scss";
 
-  .cells_title + .cells{
+  .cls-cells_title + .cls-cells{
     margin-top: 0;
   }
 
-  .cells{
-    background: $colorWhite;
+  .cls-cells{
+    background: $white;
     padding-top: 0px;
     margin-top: 15px;
     overflow: hidden;

@@ -1,7 +1,3 @@
-import cell from './cell.vue'
-import cells from './cells.vue'
+import cells from './src/cells.vue'
 
-export {
-  cell,
-  cells
-}
+export default cells

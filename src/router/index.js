@@ -48,6 +48,10 @@ export default new Router({
         path: 'preview',
         name: 'preview',
         component: resolve => require(['../example/preview/main.vue'], resolve)
+      }, {
+        path: 'cell',
+        name: 'cell',
+        component: resolve => require(['../example/cell/main.vue'], resolve)
       }]
     }
   ]
