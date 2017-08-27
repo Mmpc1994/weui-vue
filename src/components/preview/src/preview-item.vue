@@ -1,7 +1,7 @@
 <template>
-  <div class="preview_item">
-    <label for="" class="preview_label">{{label}}</label>
-    <div class="preview_value">
+  <div class="cls-preview__item">
+    <label for="" class="cls-preview__label">{{label}}</label>
+    <div class="cls-preview__value">
       <slot>{{value}}</slot>
     </div>
   </div>
@@ -13,5 +13,5 @@
       label: [String, Number],
       value: [String, Number]
     }
-  };
+  }
 </script>

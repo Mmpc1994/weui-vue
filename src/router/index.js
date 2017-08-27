@@ -44,6 +44,10 @@ export default new Router({
         path: 'checkbox',
         name: 'checkbox',
         component: resolve => require(['../example/checkbox/main.vue'], resolve)
+      }, {
+        path: 'preview',
+        name: 'preview',
+        component: resolve => require(['../example/preview/main.vue'], resolve)
       }]
     }
   ]

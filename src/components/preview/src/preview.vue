@@ -22,13 +22,13 @@
       label: String,
       value: String
     }
-  };
+  }
 </script>
 <style lang="scss">
   @import "src/styles/index.scss"; 
   .cls-preview{
     position: relative;
-    background: $colorWhite;
+    background: $white;
     &::before{
       @extend .borderTop;
     }
