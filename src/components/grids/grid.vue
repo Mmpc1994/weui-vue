@@ -1,5 +1,5 @@
 <template>
-  <a href="javascript:void(0)" class="grid">
+  <a href="javascript:void(0)" class="cls-grid">
     <div class="grid_value">
       <slot name="value">{{value}}</slot>
     </div>
