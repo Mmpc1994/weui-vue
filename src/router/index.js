@@ -52,6 +52,10 @@ export default new Router({
         path: 'cell',
         name: 'cell',
         component: resolve => require(['../example/cell/main.vue'], resolve)
+      }, {
+        path: 'radio',
+        name: 'radio',
+        component: resolve => require(['../example/radio/main.vue'], resolve)
       }]
     }
   ]
