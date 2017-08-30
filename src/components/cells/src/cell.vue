@@ -37,7 +37,8 @@
 </script>
 
 <style lang="scss">
-  @import "src/styles/index.scss"; 
+  @import "src/styles/variables.scss";
+  @import "src/styles/common.scss";
   .cls-cell {
     padding:  10px 15px;
     position: relative;

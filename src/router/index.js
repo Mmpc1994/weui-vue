@@ -60,6 +60,10 @@ export default new Router({
         path: 'radioList',
         name: 'radioList',
         component: resolve => require(['../example/radioList/main.vue'], resolve)
+      }, {
+        path: 'carousel',
+        name: 'carousel',
+        component: resolve => require(['../example/carousel/main.vue'], resolve)
       }]
     }
   ]
