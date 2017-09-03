@@ -3,7 +3,7 @@
       <clsCarouselItem>1</clsCarouselItem>
       <clsCarouselItem>2</clsCarouselItem>
       <clsCarouselItem>3</clsCarouselItem>
-      <clsCarouselItem>4</clsCarouselItem>
+      <clsCarouselItem>5</clsCarouselItem>
     </clsCarousel>
   </template>
 
