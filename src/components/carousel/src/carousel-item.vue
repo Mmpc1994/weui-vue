@@ -1,11 +1,53 @@
 <template>
-  <div class="cls-carousel__item">
+  <div class="cls-carousel__item"
+  :style="{
+    msTransform: `translateX(${ translate }px)`,
+    webkitTransform: `translateX(${ translate }px)`,
+    transform: `translateX(${ translate }px)`
+  }">
     <slot></slot>
   </div>
 </template>
 <script>
   export default {
-    name: 'clsCarouselItem'
+    name: 'clsCarouselItem',
+    data () {
+      return {
+        active: false,
+        animating: false,
+        translate: 0
+      }
+    },
+
+    methods: {
+      transformItem (index, activeIndex, oldIndex) {
+        const parentWidth = this.$parent.$el.offsetWidth
+        const length = this.$parant && this.$parant.items.length
+        this.animating = index === activeIndex || index === oldIndex
+
+        index = this.processIndex(index, activeIndex, length)
+
+        this.active = index === activeIndex
+        this.translate = parentWidth * (index - activeIndex)
+      },
+
+      processIndex (index, activeIndex, length) {
+        if (activeIndex === length - 1 && index === 0) {
+          return length - 1
+        } else if (index === length - 1 && activeIndex === 0) {
+          return -1
+        }
+        return index
+      }
+    },
+
+    created () {
+      this.$parent && this.$parent.getItems()
+    },
+
+    beforeDestroyed () {
+      this.$parent && this.$parent.getItems()
+    }
   }
 </script>
 
