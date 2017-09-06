@@ -12,13 +12,19 @@
       interval: {
         type: Number,
         default () {
-          return 3000
+          return 112000
         }
       },
       autoplay: {
         type: Boolean,
         default () {
           return true
+        }
+      },
+      initialIndex: {
+        type: Number,
+        default () {
+          return 0
         }
       }
     },
@@ -51,7 +57,6 @@
       },
   
       resetItemPosition (oldVal) {
-        console.log(this.items)
         this.items.forEach((item, index) => {
           item.transformItem(index, this.activeIndex, oldVal)
         })
@@ -66,6 +71,10 @@
 
     mounted () {
       this.getItems()
+      if (this.initialIndex < this.items.length && this.initialIndex >= 0) {
+        // 触发一次watcher
+        this.activeIndex = this.initialIndex
+      }
       this.$nextTick(this.startTimer)
     }
   }
@@ -75,5 +84,6 @@
   .cls-carousel {
     height: 200px;
     position: relative;
+    overflow: hidden;
   }
 </style>
