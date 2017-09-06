@@ -12,7 +12,7 @@
       interval: {
         type: Number,
         default () {
-          return 112000
+          return 2000
         }
       },
       autoplay: {
