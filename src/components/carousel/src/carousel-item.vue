@@ -56,7 +56,7 @@
       this.$parent && this.$parent.getItems()
     },
 
-    beforeDestroyed () {
+    destroyed () {
       this.$parent && this.$parent.getItems()
     }
   }

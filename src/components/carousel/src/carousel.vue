@@ -1,6 +1,17 @@
 <template>
-  <div class="cls-carousel">
+  <div class="cls-carousel"
+    @mouseenter.stop="handleMouseEnter"
+    @mouseleave.stop="handleMouseLeave">
     <slot></slot>
+    <ul class="cls-carousel__indicators">
+      <li v-for="(item, index) in items" class="cls-carousel__indicator">
+        <button class="cls-carousel__button" 
+          :class="{
+            'cls-carousel__active': index === activeIndex
+          }"
+          @click.stop="handleIndicatorClick(index)"></button>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -48,6 +59,10 @@
         this.timer = setInterval(this.playSlides, this.interval)
       },
 
+      pauseTimer () {
+        clearInterval(this.timer)
+      },
+
       playSlides () {
         if (this.activeIndex < this.items.length - 1) {
           this.activeIndex ++
@@ -60,6 +75,20 @@
         this.items.forEach((item, index) => {
           item.transformItem(index, this.activeIndex, oldVal)
         })
+      },
+
+      handleIndicatorClick (index) {
+        this.activeIndex = index
+      },
+
+      handleMouseEnter () {
+        // this.hover = true
+        this.pauseTimer()
+      },
+
+      handleMouseLeave () {
+        // this.hover = false
+        this.startTimer()
       }
     },
 
@@ -85,5 +114,39 @@
     height: 200px;
     position: relative;
     overflow: hidden;
+  }
+
+  .cls-carousel__indicators {
+    position: absolute;
+    list-style: none;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+  }
+
+  .cls-carousel__indicator {
+    display: inline-block;
+    padding: 12px 4px;
+    cursor: pointer;
+  }
+
+  .cls-carousel__button {
+    display: block;
+    opacity: .48;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .cls-carousel__active{
+    opacity: 1;
   }
 </style>

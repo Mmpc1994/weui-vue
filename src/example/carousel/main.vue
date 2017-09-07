@@ -9,7 +9,6 @@
         <clsCarouselItem>5</clsCarouselItem>
         <clsCarouselItem>6</clsCarouselItem>
         <clsCarouselItem>7</clsCarouselItem>
-        <clsCarouselItem>8</clsCarouselItem>
       </clsCarousel>
     </div>
     <div flex></div>
