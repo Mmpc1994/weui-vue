@@ -53,6 +53,10 @@
         border-color: $white;
         transform: scale(1); 
       }
+
+      &:before {
+        transform: scale(1);
+      }
     }
   }
 
@@ -88,6 +92,7 @@
       width: 10px;
       right: 5px;
       top: 5px;
+      transform: scale(0);
       border-radius: 100%;
       background-color: $white;
     }
