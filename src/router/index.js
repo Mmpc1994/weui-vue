@@ -64,6 +64,10 @@ export default new Router({
         path: 'carousel',
         name: 'carousel',
         component: resolve => require(['../example/carousel/main.vue'], resolve)
+      }, {
+        path: 'loadmore',
+        name: 'loadmore',
+        component: resolve => require(['../example/loadmore/main.vue'], resolve)
       }]
     }
   ]

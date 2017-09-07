@@ -127,6 +127,26 @@
       }
     },
     methods: {
+      onTopLoaded () {
+        this.translate = '0'
+        setTimeout(() => {
+          this.topStatus = 'pull'
+        }, 200);
+      },
+      onBottomLoaded () {
+        this.bottomStatus = 'pull';
+        this.$nextTick(() => {
+          if (this.scrollEventTarget === window) {
+            document.body.scrollTop += 50;
+          } else {
+            this.scrollEventTarget.scrollTop += 50;
+          }
+          this.translate = 0;
+        })
+        setTimeout(() => {
+          this.bottomDropped = false;
+        }, 200);
+      },
       getScrollEventTarget(element) {
         let currentNode = element;
         while (currentNode && currentNode.tagName !== 'HTML' && currentNode.tagName !== 'BODY' && currentNode.nodeType === 1) {
@@ -260,7 +280,7 @@
 </script>
 <style lang="scss">
   .cls-loadmore {
-    overflow: auto;
+    overflow: hidden;
   }
 
   .cls-loadmore__dropped{

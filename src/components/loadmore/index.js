@@ -1,5 +1,3 @@
 import loadmore from './loadmore.vue'
 
-export {
-  loadmore
-}
+export default loadmore
