@@ -1,17 +1,17 @@
 <template>
-  <div class="loadmore">
-    <div class="loadmore-content" :class="{ 'is-dropped': topDropped || bottomDropped}" :style="{ 'transform': 'translate3d(0, ' + translate + 'px, 0)' }">
+  <div class="cls-loadmore">
+    <div class="cls-loadmore__content" :class="{ 'cls-loadmore__dropped': topDropped || bottomDropped}" :style="{ 'transform': 'translate3d(0, ' + translate + 'px, 0)' }">
       <slot name="top">
-        <div class="loadmore-top" v-if="topMethod">
+        <div class="cls-loadmore__top" v-if="topMethod">
           <!--<spinner v-if="topStatus === 'loading'" class="loadmore-spinner" :size="20" type="fading-circle"></spinner>-->
-          <span class="loadmore-text">{{ topText }}</span>
+          <span class="cls-loadmore__text">{{ topText }}</span>
         </div>
       </slot>
       <slot></slot>
       <slot name="bottom">
-        <div class="loadmore-bottom" v-if="bottomMethod">
+        <div class="cls-loadmore__bottom" v-if="bottomMethod">
           <!--<spinner v-if="bottomStatus === 'loading'" class="loadmore-spinner" :size="20" type="fading-circle"></spinner>-->
-          <span class="loadmore-text">{{ bottomText }}</span>
+          <span class="cls-loadmore__text">{{ bottomText }}</span>
         </div>
       </slot>
     </div>
@@ -171,7 +171,7 @@
         }
       },
       handleTouchMove(event) {
-        if (this.startY < this.$el.getBoundingClientRect().top && this.startY > this.$el.getBoundingClientRect().bottom) {
+        if (this.startY < this.$el.getBoundingClientRect().top || this.startY > this.$el.getBoundingClientRect().bottom) {
           // 如果touch 事件不是在容器当中发生的就直接返回
           return;
         }
@@ -259,28 +259,29 @@
   };
 </script>
 <style lang="scss">
-  .loadmore {
+  .cls-loadmore {
     overflow: auto;
-    .is-dropped {
-      transition: .2s;
-    }
   }
 
-  .loadmore-top, .loadmore-bottom {
+  .cls-loadmore__dropped{
+    transition: .2s;
+  }
+
+  .cls-loadmore__top, .cls-loadmore__bottom {
     text-align: center;
     height: 50px;
     line-height: 50px;
   }
 
-  .loadmore-top{
+  .cls-loadmore__top{
     margin-top: -50px;
   }
 
-  .loadmore-bottom {
+  .cls-loadmore__bottom{
     margin-bottom: -50px;
   }
 
-  .loadmore-text {
+  .cls-loadmore__text {
     vertical-align: middle;
   }
 </style>
