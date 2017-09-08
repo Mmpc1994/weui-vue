@@ -2,13 +2,17 @@
   <a class="cls-button" :class="['cls-button__' + type, 'cls-button__' + size, {
     'is-disabled': disabled
   }]" @click="handleClick">
+    <clsSpinner v-if="loading"></clsSpinner>
     <slot></slot>
   </a>
 </template>
 
 <script>
+  import clsSpinner from '@/components/spinner'
+  
   export default {
     name: 'clsButton',
+    components: { clsSpinner },
 
     props: {
       type: {
@@ -35,7 +39,13 @@
           ].indexOf(value) > -1
         }
       },
-      disabled: Boolean
+      disabled: Boolean,
+      loading: {
+        type: Boolean,
+        default () {
+          return false
+        }
+      }
     },
 
     methods: {

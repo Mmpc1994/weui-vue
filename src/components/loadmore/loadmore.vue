@@ -3,14 +3,14 @@
     <div class="cls-loadmore__content" :class="{ 'cls-loadmore__dropped': topDropped || bottomDropped}" :style="{ 'transform': 'translate3d(0, ' + translate + 'px, 0)' }">
       <slot name="top">
         <div class="cls-loadmore__top" v-if="topMethod">
-          <!--<spinner v-if="topStatus === 'loading'" class="loadmore-spinner" :size="20" type="fading-circle"></spinner>-->
+          <clsSpinner v-if="topStatus === 'loading'"></clsSpinner>
           <span class="cls-loadmore__text">{{ topText }}</span>
         </div>
       </slot>
       <slot></slot>
       <slot name="bottom">
         <div class="cls-loadmore__bottom" v-if="bottomMethod">
-          <!--<spinner v-if="bottomStatus === 'loading'" class="loadmore-spinner" :size="20" type="fading-circle"></spinner>-->
+          <clsSpinner v-if="topStatus === 'loading'"></clsSpinner>
           <span class="cls-loadmore__text">{{ bottomText }}</span>
         </div>
       </slot>
@@ -19,8 +19,11 @@
 </template>
 <script>
   /* eslint-disable*/
+  import clsSpinner from '@/components/spinner'
+  
   export default {
     name: 'loadmore',
+    components: { clsSpinner },
     props: {
       maxDistance: {
         type: Number,
@@ -134,7 +137,6 @@
         }, 200);
       },
       onBottomLoaded () {
-        this.bottomStatus = 'pull';
         this.$nextTick(() => {
           if (this.scrollEventTarget === window) {
             document.body.scrollTop += 50;
@@ -144,6 +146,7 @@
           this.translate = 0;
         })
         setTimeout(() => {
+          this.bottomStatus = 'pull';
           this.bottomDropped = false;
         }, 200);
       },

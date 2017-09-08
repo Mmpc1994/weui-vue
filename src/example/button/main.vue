@@ -10,7 +10,7 @@
     <div layout>
       <div flex>
         <clsButton type="success" :disabled="true" size="small">测试按钮</clsButton>
-        <clsButton type="warning"  size="small">测试按钮</clsButton>
+        <clsButton type="warning"  size="small" :loading="true">测试按钮</clsButton>
         <clsButton type="danger"  size="small">测试按钮</clsButton>
         <clsButton type="primary"  size="small">测试按钮</clsButton>
       </div>
