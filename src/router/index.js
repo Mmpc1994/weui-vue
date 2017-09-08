@@ -68,6 +68,10 @@ export default new Router({
         path: 'loadmore',
         name: 'loadmore',
         component: resolve => require(['../example/loadmore/main.vue'], resolve)
+      }, {
+        path: 'spinner',
+        name: 'spinner',
+        component: resolve => require(['../example/spinner/main.vue'], resolve)
       }]
     }
   ]
