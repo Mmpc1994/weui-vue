@@ -72,6 +72,14 @@ export default new Router({
         path: 'spinner',
         name: 'spinner',
         component: resolve => require(['../example/spinner/main.vue'], resolve)
+      }, {
+        path: 'toast',
+        name: 'toast',
+        component: resolve => require(['../example/toast/main.vue'], resolve)
+      }, {
+        path: 'picker',
+        name: 'picker',
+        component: resolve => require(['../example/picker/main.vue'], resolve)
       }]
     }
   ]

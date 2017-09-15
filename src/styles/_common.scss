@@ -4,9 +4,9 @@
   left: 0;
   right: 0;
   height: 1px;
-  color: $borderColor;
+  color: #ccc;
   transform-origin: 0 100%;
-  border-bottom: 1px solid $borderColor;
+  border-bottom: 1px solid #ccc;
   transform: scaleY(0.5)
 }
 ._borderBaseColumn {
@@ -31,13 +31,13 @@
 
 .borderRight {
   @extend ._borderBaseColumn;
-  border-right: 1px solid $borderColor;
+  border-right: 1px solid #ccc;
   right: 0;
 }
 
 .borderLeft {
   @extend ._borderBaseColumn;
-  border-left: 1px solid $borderColor;
+  border-left: 1px solid #ccc;
   left: 0;
 }
 
