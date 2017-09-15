@@ -4,13 +4,15 @@
       <slot name="toolbar"></slot>
     </div>
     <div class="cls-picker__items" layout>
-      <cls-picker-item 
+      <slot>
+        <cls-picker-item 
         v-for="(item, index) in values" 
         :key="index"
-        v-model="item.value"
+        :values="item.value"
         :visibleItemCount="visibleItemCount"
         flex
         ></cls-picker-item>
+      </slot>
       <div class="cls-picker__highlight" :style="{height: itemHeight + 'px', 'margin-top': -itemHeight/2 + 'px'}"></div>
     </div>
   </div>
@@ -52,13 +54,14 @@
     top: 50%;
     width: 100%;
     left: 0;
+    z-index: 3;
     &::before{
       @extend .borderTop;
-      border-color: $borderColor;
+      border-color: #E5E5E5;
     }
     &::after{
       @extend .borderBottom;
-      border-color: $borderColor;
+      border-color: #E5E5E5;
     }
   }
 
