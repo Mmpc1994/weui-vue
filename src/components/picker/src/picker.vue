@@ -5,13 +5,13 @@
     </div>
     <div class="cls-picker__items" layout>
       <slot>
-        <cls-picker-item 
+        <!-- <cls-picker-item 
         v-for="(item, index) in values" 
         :key="index"
         :values="item.value"
         :visibleItemCount="visibleItemCount"
         flex
-        ></cls-picker-item>
+        ></cls-picker-item> -->
       </slot>
       <div class="cls-picker__highlight" :style="{height: itemHeight + 'px', 'margin-top': -itemHeight/2 + 'px'}"></div>
     </div>

@@ -1,11 +1,11 @@
 <template>
   <div class="cls-picker__wrap">
-    <div class="cls-picker__mask" :style="{
-      'background-size': `100% ${offestHeight}px`
-    }"></div>
     <div class="cls-picker__item" :style="{height: contentHeight + 'px'}">
       <div class="cls-picker__list" v-for="item in values"
-        @click="chose(item)"
+        @click="choseItem(item)"
+        :class="{
+          'cls-picker__selected': item === currentValue
+        }"
         :style="{height: itemHeight + 'px', 'line-height': itemHeight + 'px'}"
         >{{item}}</div>
     </div>
@@ -71,11 +71,25 @@
           const translate = -(index - Math.floor(this.visibleItemCount / 2)) * this.itemHeight;
           this.$nextTick(() => {
           const el =  this.$el && this.$el.querySelector('.cls-picker__item');
-            translateUtil.translateElement(el, null, translate);
+          translateUtil.translateElement(el, null, translate);
           })
         }
       },
       doOnValuesChange() {
+
+      },
+      choseItem(item) {
+        if (this.multiple) return;
+        this.$emit('choseItem', item);
+      },
+      updateRotate(currentTranslate, pickerItems) {
+        if (!pickerItems) pickerItems = this.$el.querySelectorAll('cls-picker__list');
+        const value = this.translate2Value(currentTranslate);
+        const index = this.values.indexOf('value');
+        
+
+      },
+      preRotate(translate) {
 
       },
       initEvents () {
@@ -105,7 +119,7 @@
             velocityTranslate = translate - prevTranslate || translate;
             prevTranslate = translate;
             // if (this.rotateEffect) {
-            //   this.updateRotate(prevTranslate, pickerItems);
+              // this.updateRotate(prevTranslate, pickerItems);
             // }
           },
           end: () => {
@@ -165,6 +179,7 @@
 </script>
 
 <style lang="scss">
+  @import "src/styles/variables.scss";
   .cls-picker__wrap {
     position: relative;
   }
@@ -175,12 +190,14 @@
     transition-timing-function: ease-out;
     backface-visibility: hidden;
     z-index: 3;
+    color: $textColor;
   }
 
-  .cls-picker__list{
-    /* color: #000; */
+  .cls-picker__selected{
+    color: $dark;
+    font-size: 1.5rem;
   }
-  
+
 
   .cls-picker__mask{
     position: absolute;

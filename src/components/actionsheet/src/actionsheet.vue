@@ -1,17 +1,11 @@
 <template>
   <transition name="actionsheet">
-    <div class="cls-actionsheet" v-show="currentValue">
+    <div class="cls-actionsheet" v-show="visible">
       <div class="cls-actionsheet__title">
         这是一个标题
       </div>
-      <slot>
-        <a class="cls-actionsheet__cell">示例菜单</a>
-        <a class="cls-actionsheet__cell">示例菜单</a>
-        <a class="cls-actionsheet__cell">示例菜单</a>
-        <a class="cls-actionsheet__cell">示例菜单</a>
-        <a class="cls-actionsheet__cell">示例菜单</a>
-      </slot>
-      <div class="cls-actionsheet__action">
+      <slot></slot>
+      <div class="cls-actionsheet__action" v-if="action">
         <a class="cls-actionsheet__cell">取消</a>
       </div>
     </div>
@@ -20,11 +14,10 @@
 </template>
 
 <script>
-  import Popup from 'vue-popup'
-  import 'vue-popup/lib/popup.css'
+  import Popup from '@/utils/popup'
 
   export default {
-    name: 'actionsheet',
+    name: 'clsActionsheet',
 
     mixins: [Popup],
 
@@ -36,9 +29,10 @@
 
     props: {
       modal: {
-        default: true
+        default () {
+          return true
+        }
       },
-
       showModal: {
         type: Boolean,
         default: true
@@ -50,12 +44,16 @@
 
       closeOnClickModal: {
         default: true
-      }
+      },
+      action: Boolean
     },
 
     watch: {
-      value (val) {
-        this.currentValue = val
+      value: {
+        immediate: true,
+        handler (val) {
+          this.currentValue = val
+        }
       },
 
       currentValue (val) {
@@ -85,6 +83,7 @@
     width: 100%;
     left: 50%; 
     transform: translate3d(-50%, 0, 0); 
+    background-color: #FCFCFD;
   }
 
   .cls-actionsheet__title {
