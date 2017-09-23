@@ -12,7 +12,7 @@ function getInstance () {
 }
 
 ToastConstructor.prototype.close = () => {
-  document.body.removeChild()
+  document.body.removeChild();
 }
 
 
