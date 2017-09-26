@@ -15,6 +15,7 @@
 
 <script>
   import Popup from '@/utils/popup'
+  import '@/utils/popup/popup.css'
 
   export default {
     name: 'clsActionsheet',

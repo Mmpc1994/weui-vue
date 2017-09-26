@@ -170,6 +170,7 @@ export default {
           PopupManager.closeModal(this._popupId);
           this._closing = false;
         }
+        console.log(1111);
         PopupManager.openModal(this._popupId, PopupManager.nextZIndex(), dom, props.modalClass);
         if (props.lockScroll) {
           if (!this.bodyOverflow) {

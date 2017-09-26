@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section style="height: 100%">
     <div layout="row">
       <cls-button type="success" flex @click="open">open</cls-button>
     </div>
